@@ -2,6 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import os
 import json
+import socket
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -13,9 +14,9 @@ logger = logging.getLogger(__name__)
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
     """Send a message when the command /start is issued."""
-    user = update.message.from_user
-    update.message.reply_text("Hello "+user.first_name)
-
+    a=((([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2] if not ip.startswith("127.")] or [[(s.connect(("8.8.8.8", 53)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]]) + ["no IP found"])[0])
+    update.message.reply_text(a)
+    
 def echo(bot, update): 
     ID = str(update.message.text)
     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImUwNDU3M2M0LWExOWItNDY1Yy1hNTg1LTA5ZDIwNTkyM2ZjOSIsImlhdCI6MTU0MjMwOTEwNiwic3ViIjoiZGV2ZWxvcGVyL2ZjYzExZTg2LWQ0OWQtY2I5My03ZGUwLTVlMTQyZGE4NWIwOCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjExNy4yMjEuMTMyLjE0MyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.QpAxF3GqJ3ElSXnY2RctkIS_eXJPIsFeJTvFifUjezAue5aCj5mYCfQl7AhmDBKd7Np6I6C0B0PjVVIwx3ce2A"
