@@ -1,1 +1,1 @@
-web: python3 cwl.py
+worker: python3 cwl.py
