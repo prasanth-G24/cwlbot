@@ -19,7 +19,7 @@ def start(bot, update):
     
 def echo(bot, update): 
     ID = str(update.message.text)
-    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImUwNDU3M2M0LWExOWItNDY1Yy1hNTg1LTA5ZDIwNTkyM2ZjOSIsImlhdCI6MTU0MjMwOTEwNiwic3ViIjoiZGV2ZWxvcGVyL2ZjYzExZTg2LWQ0OWQtY2I5My03ZGUwLTVlMTQyZGE4NWIwOCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjExNy4yMjEuMTMyLjE0MyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.QpAxF3GqJ3ElSXnY2RctkIS_eXJPIsFeJTvFifUjezAue5aCj5mYCfQl7AhmDBKd7Np6I6C0B0PjVVIwx3ce2A"
+    token = "eyJ0ezUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImUwNDU3M2M0LWExOWItNDY1Yy1hNTg1LTA5ZDIwNTkyM2ZjOSIsImlhdCI6MTU0MjMwOTEwNiwic3ViIjoiZGV2ZWxvcGVyL2ZjYzExZTg2LWQ0OWQtY2I5My03ZGUwLTVlMTQyZGE4NWIwOCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjExNy4yMjEuMTMyLjE0MyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.QpAxF3GqJ3ElSXnY2RctkIS_eXJPIsFeJTvFifUjezAue5aCj5mYCfQl7AhmDBKd7Np6I6C0B0PjVVIwx3ce2A"
     a  = "curl -X GET --header 'Accept: application/json' --header"+ ' "authorization: Bearer '+token+ "\" 'https://api.clashofclans.com/v1/clanwarleagues/wars/%s'"%("%23"+ID)
     a = os.popen(a).readlines()
     a = a[0]
@@ -56,7 +56,7 @@ def error(bot, update, error):
 def main():
     """Start the bot."""
     # Create the EventHandler and pass it your bot's token.
-    updater = Updater("727606628:AAG1OvqF6o_c6ImjoQajsSswimEe9l1-3Xw")
+    updater = Updater("727606628:AAGc6ImjoQajsSswimEe9l1-3Xw")
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
